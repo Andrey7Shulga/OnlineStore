@@ -30,7 +30,7 @@ public class MainPage {
 
         menublock.blockToLogin();
 
-        //enter a registered e-mail address as a login
+        //Enter a registered e-mail address as a login
 //        $("#email").clear();
 //        $("#email").setValue(login);
         ph.setValueToCssElement("#email", login);
