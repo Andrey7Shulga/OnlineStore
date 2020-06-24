@@ -36,7 +36,7 @@ public class MainPage {
         ph.setValueToCssElement("#email", login);
 
 
-        //enter the registered password as a password
+        //enter a registered password as a password
 //        $("#passwd").clear();
 //        $("#passwd").setValue(password);
         ph.setValueToCssElement("#passwd", password);
