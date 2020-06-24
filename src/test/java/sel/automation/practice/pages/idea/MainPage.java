@@ -177,18 +177,31 @@ public class MainPage {
 
     public MainPage checkCartList() {
 
-        String cartItemOneName = $("dt.first_item a.cart_block_product_name").getAttribute("title");
-        String cartItemOnePrice = $("dt.first_item span.price").getText();
-        String cartItemTwoName = $("dt.item a.cart_block_product_name").getAttribute("title");
-        String cartItemTwoPrice = $("dt.item span.price").getText();
-        String cartItemThreeName = $("dt.last_item a.cart_block_product_name").getAttribute("title");
-        String cartItemThreePrice = $("dt.last_item span.price").getText();
+//        String cartItemOneName = $("dt.first_item a.cart_block_product_name").getAttribute("title");
+//        String cartItemOnePrice = $("dt.first_item span.price").getText();
+//        String cartItemTwoName = $("dt.item a.cart_block_product_name").getAttribute("title");
+//        String cartItemTwoPrice = $("dt.item span.price").getText();
+//        String cartItemThreeName = $("dt.last_item a.cart_block_product_name").getAttribute("title");
+//        String cartItemThreePrice = $("dt.last_item span.price").getText();
 
-        String cartShippingCost = $(".cart_block_shipping_cost").getText();
-        String cartTotalCost = $(".cart_block_total").getText();
+        // collecting Name and Price information from the cart's items
+        String cartItemOneName = ph.getAttributeFromCssElement("dt.first_item a.cart_block_product_name", "title");
+        String cartItemOnePrice = ph.getTextFromCssElement("dt.first_item span.price");
+        String cartItemTwoName = ph.getAttributeFromCssElement("dt.item a.cart_block_product_name", "title");
+        String cartItemTwoPrice = ph.getTextFromCssElement("dt.item span.price");
+        String cartItemThreeName = ph.getAttributeFromCssElement("dt.last_item a.cart_block_product_name", "title");
+        String cartItemThreePrice = ph.getTextFromCssElement("dt.last_item span.price");
 
+//        String cartShippingCost = $(".cart_block_shipping_cost").getText();
+//        String cartTotalCost = $(".cart_block_total").getText();
 
-        $(".shopping_cart > a:nth-child(1)").hover();
+        //collecting cost information
+        String cartShippingCost = ph.getTextFromCssElement(".cart_block_shipping_cost");
+        String cartTotalCost = ph.getTextFromCssElement(".cart_block_total");
+
+        //hover an element
+//        $(".shopping_cart > a:nth-child(1)").hover();
+        ph.hoverOnCssElement(".shopping_cart > a:nth-child(1)");
 
         //collect a cart (three items' names and prices) information
         cartList.add(cartItemOneName);
@@ -226,8 +239,11 @@ public class MainPage {
 
     public CartPage orderProcessing() {
 
-        $(".shopping_cart > a:nth-child(1)").hover();
-        $("#button_order_cart > span:nth-child(1)").click();
+//        $(".shopping_cart > a:nth-child(1)").hover();
+//        $("#button_order_cart > span:nth-child(1)").click();
+        ph.hoverOnCssElement(".shopping_cart > a:nth-child(1)");
+        ph.clickOnCssElement("#button_order_cart > span:nth-child(1)");
+
         return page(CartPage.class);
 
     }
@@ -235,7 +251,9 @@ public class MainPage {
 
     public MainPage logOut() {
 
-        $(".logout").click();
+//        $(".logout").click();
+        ph.clickOnCssElement(".logout");
+
         return page(MainPage.class);
 
     }
