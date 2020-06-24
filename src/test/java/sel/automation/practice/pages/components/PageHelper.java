@@ -1,8 +1,12 @@
 package sel.automation.practice.pages.components;
 
+import java.util.ArrayList;
+
 import static com.codeborne.selenide.Selenide.*;
 
 public class PageHelper {
+
+    private ArrayList<String> arraylist = new ArrayList<>();
 
     public void clickOnCssElement (String element) {
 
@@ -74,6 +78,26 @@ public class PageHelper {
     public int getSizeFromXpath (String element) {
 
         return $$x("" + element + "").size();
+
+    }
+
+    public void addTwoToArray (ArrayList<String> al, String a, String b) {
+
+        this.arraylist = al;
+        al.add(a);
+        al.add(b);
+
+    }
+
+    public void addSixToArray (ArrayList<String> al, String a, String b, String c, String d, String e, String f) {
+
+        this.arraylist = al;
+        al.add(a);
+        al.add(b);
+        al.add(c);
+        al.add(d);
+        al.add(e);
+        al.add(f);
 
     }
 

@@ -20,7 +20,6 @@ public class MainPage {
     public  static final ArrayList<String> cartListTotal = new ArrayList<String>();
 
 
-
     public static MainPage enterToMainPage() {
         return page(MainPage.class);
 
@@ -82,8 +81,11 @@ public class MainPage {
         String firstItemPrice = ph.getTextFromCssElement("div.content_price span.price");
 
         //collect the first item information from the list
-        itemList.add(firstItemName);
-        itemList.add(firstItemPrice);
+//        itemList.add(firstItemName);
+//        itemList.add(firstItemPrice);
+
+        ph.addTwoToArray(itemList, firstItemName, firstItemPrice);
+
 
         //add an item to a cart and close the cart window
 //        $(".ajax_add_to_cart_button").click();
@@ -116,8 +118,11 @@ public class MainPage {
                 ph.getTextFromXpathElement("/html/body/div/div[2]/div/div[3]/div[2]/ul/li[3]/div/div[1]/div/div[2]/span[1]");
 
         //collect the second item information from the list
-        itemList.add(secondItemName);
-        itemList.add(secondItemPrice);
+//        itemList.add(secondItemName);
+//        itemList.add(secondItemPrice);
+        ph.addTwoToArray(itemList, secondItemName, secondItemPrice);
+
+
 
         //add an item to cart and close a cart window
 //        $("li.ajax_block_product:nth-child(3) a[title='Add to cart']").click();
@@ -143,8 +148,13 @@ public class MainPage {
         String thirdItemPrice = ph.getTextFromCssElement("div.content_price:nth-child(4) > span:nth-child(1)");
 
         //Collect the third item information from the list
-        itemList.add(thirdItemName);
-        itemList.add(thirdItemPrice);
+//        itemList.add(thirdItemName);
+//        itemList.add(thirdItemPrice);
+
+        ph.addTwoToArray(itemList, thirdItemName, thirdItemPrice);
+
+
+
 
         //add an item to cart and close a cart window
 //        $(".ajax_add_to_cart_button").click();
@@ -169,9 +179,8 @@ public class MainPage {
         ph.hoverOnCssElement(".shopping_cart > a:nth-child(1)");
 
 //        int mainCartSize =  $$(".products dt").size();
-        int mainCartSize =  ph.getSizeFromCss(".products dt");
-
-        return mainCartSize;
+//        return mainCartSize;
+        return ph.getSizeFromCss(".products dt");
 
     }
 
@@ -204,16 +213,22 @@ public class MainPage {
         ph.hoverOnCssElement(".shopping_cart > a:nth-child(1)");
 
         //collect a cart (three items' names and prices) information
-        cartList.add(cartItemOneName);
-        cartList.add(cartItemOnePrice);
-        cartList.add(cartItemTwoName);
-        cartList.add(cartItemTwoPrice);
-        cartList.add(cartItemThreeName);
-        cartList.add(cartItemThreePrice);
+//        cartList.add(cartItemOneName);
+//        cartList.add(cartItemOnePrice);
+//        cartList.add(cartItemTwoName);
+//        cartList.add(cartItemTwoPrice);
+//        cartList.add(cartItemThreeName);
+//        cartList.add(cartItemThreePrice);
+
+        ph.addSixToArray(cartList, cartItemOneName, cartItemOnePrice, cartItemTwoName,
+                cartItemTwoPrice, cartItemThreeName, cartItemThreePrice);
+
 
         //collect the cost information from the cart
-        cartListTotal.add(cartShippingCost);
-        cartListTotal.add(cartTotalCost);
+//        cartListTotal.add(cartShippingCost);
+//        cartListTotal.add(cartTotalCost);
+
+        ph.addTwoToArray(cartListTotal, cartShippingCost, cartTotalCost);
 
         return page(MainPage.class);
 

@@ -33,8 +33,9 @@ public class CartPage {
     public int getShoppingCartNumberOfOrders() {
         //the cart list's number must be equal 3
 //        int size = $$("#cart_summary > tbody > tr").size();
-        int size = ph.getSizeFromCss("#cart_summary > tbody > tr");
-        return size;
+//        return size;
+
+        return ph.getSizeFromCss("#cart_summary > tbody > tr");
     }
 
 
@@ -127,12 +128,16 @@ public class CartPage {
         String totOrderCost = ph.getTextFromCssElement("#total_price");
 
         //collect an order (three items' names and prices) information
-        orderList.add(firstOrderTitle);
-        orderList.add(firstOrderPrice);
-        orderList.add(secondOrderTitle);
-        orderList.add(secondOrderPrice);
-        orderList.add(thirdOrderTitle);
-        orderList.add(thirdOrderPrice);
+//        orderList.add(firstOrderTitle);
+//        orderList.add(firstOrderPrice);
+//        orderList.add(secondOrderTitle);
+//        orderList.add(secondOrderPrice);
+//        orderList.add(thirdOrderTitle);
+//        orderList.add(thirdOrderPrice);
+
+        ph.addSixToArray(orderList, firstOrderTitle, firstOrderPrice, secondOrderTitle,
+                secondOrderPrice, thirdOrderTitle, thirdOrderPrice);
+
 
         //collect the order's total cost information
         orderTotalCost.add(totOrderCost);
