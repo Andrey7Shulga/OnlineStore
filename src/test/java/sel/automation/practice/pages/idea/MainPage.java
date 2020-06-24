@@ -3,6 +3,7 @@ package sel.automation.practice.pages.idea;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import sel.automation.practice.pages.components.MenuBlock;
+import sel.automation.practice.pages.components.PageHelper;
 
 import java.util.ArrayList;
 
@@ -12,6 +13,7 @@ import static org.testng.Assert.assertEquals;
 public class MainPage {
 
     private MenuBlock menublock;
+    PageHelper ph = new PageHelper();
 
     public  static final ArrayList<String> itemList = new ArrayList<String>();
     public  static final ArrayList<String> cartList = new ArrayList<String>();
@@ -29,15 +31,19 @@ public class MainPage {
         menublock.blockToLogin();
 
         //enter a registered e-mail address as a login
-        $("#email").clear();
-        $("#email").setValue(login);
+//        $("#email").clear();
+//        $("#email").setValue(login);
+        ph.setValueToCssElement("#email", login);
+
 
         //enter a registered password as a password
-        $("#passwd").clear();
-        $("#passwd").setValue(password);
+//        $("#passwd").clear();
+//        $("#passwd").setValue(password);
+        ph.setValueToCssElement("#passwd", password);
 
         //submit the login form
-        $("#SubmitLogin").click();
+//        $("#SubmitLogin").click();
+        ph.clickOnCssElement("#SubmitLogin");
 
         return page(MainPage.class);
 
@@ -45,7 +51,9 @@ public class MainPage {
 
     public MainPage isLoginCorrect(String expectedLogin) {
         //get the logged user's name
-        String currentLogin = $(".account > span:nth-child(1)").getText();
+//        String currentLogin = $(".account > span:nth-child(1)").getText();
+        String currentLogin = ph.getTextFromCssElement(".account > span:nth-child(1)");
+
         assertEquals(expectedLogin, currentLogin);
 
         return page(MainPage.class);
@@ -57,24 +65,31 @@ public class MainPage {
         menublock.womenMenuBlock();
 
         //select 'TOP' categories
-        $("#subcategories a[title='Tops']").click();
+//        $("#subcategories a[title='Tops']").click();
+        ph.clickOnCssElement("#subcategories a[title='Tops']");
 
         //select 'BLOUSES' subcategories
-        $("#subcategories a[title='Blouses']").click();
+//        $("#subcategories a[title='Blouses']").click();
+        ph.clickOnCssElement("#subcategories a[title='Blouses']");
 
         //hover an element to get some attributes
-        $(".product_img_link").hover();
+//        $(".product_img_link").hover();
+        ph.hoverOnCssElement(".product_img_link");
 
-        String firstItemName = $(".right-block .product-name").getText();
-        String firstItemPrice = $("div.content_price span.price").getText();
+//        String firstItemName = $(".right-block .product-name").getText();
+//        String firstItemPrice = $("div.content_price span.price").getText();
+        String firstItemName = ph.getTextFromCssElement(".right-block .product-name");
+        String firstItemPrice = ph.getTextFromCssElement("div.content_price span.price");
 
         //collect the first item information from the list
         itemList.add(firstItemName);
         itemList.add(firstItemPrice);
 
         //add an item to a cart and close the cart window
-        $(".ajax_add_to_cart_button").click();
-        $(".cross").click();
+//        $(".ajax_add_to_cart_button").click();
+//        $(".cross").click();
+        ph.clickOnCssElement(".ajax_add_to_cart_button");
+        ph.clickOnCssElement(".cross");
 
         return page(MainPage.class);
 
@@ -85,22 +100,30 @@ public class MainPage {
         menublock.dressesMenuBlock();
 
         //select 'Summer Dresses' category
-        $("#subcategories a[title='Summer Dresses']").click();
+//        $("#subcategories a[title='Summer Dresses']").click();
+        ph.clickOnCssElement("#subcategories a[title='Summer Dresses']");
 
         //hover an element to get some attributes
-        $("li.ajax_block_product:nth-child(3) .product_img_link").hover();
+//        $("li.ajax_block_product:nth-child(3) .product_img_link").hover();
+        ph.hoverOnCssElement("li.ajax_block_product:nth-child(3) .product_img_link");
 
-        String secondItemName = $("#center_column li:nth-child(3) a.product-name").getText();
+//        String secondItemName = $("#center_column li:nth-child(3) a.product-name").getText();
+        String secondItemName = ph.getTextFromCssElement("#center_column li:nth-child(3) a.product-name");
+
+//        String secondItemPrice =
+//                $x("/html/body/div/div[2]/div/div[3]/div[2]/ul/li[3]/div/div[1]/div/div[2]/span[1]").getText();
         String secondItemPrice =
-                $x("/html/body/div/div[2]/div/div[3]/div[2]/ul/li[3]/div/div[1]/div/div[2]/span[1]").getText();
+                ph.getTextFromXpathElement("/html/body/div/div[2]/div/div[3]/div[2]/ul/li[3]/div/div[1]/div/div[2]/span[1]");
 
         //collect the second item information from the list
         itemList.add(secondItemName);
         itemList.add(secondItemPrice);
 
         //add an item to cart and close a cart window
-        $("li.ajax_block_product:nth-child(3) a[title='Add to cart']").click();
-        $(".cross").click();
+//        $("li.ajax_block_product:nth-child(3) a[title='Add to cart']").click();
+//        $(".cross").click();
+        ph.clickOnCssElement("li.ajax_block_product:nth-child(3) a[title='Add to cart']");
+        ph.clickOnCssElement(".cross");
 
         return page(MainPage.class);
 
@@ -111,27 +134,28 @@ public class MainPage {
         menublock.tshirtsMenuBlock();
 
         //hover an element to get some attributes
-        $(".product_img_link").hover();
+//        $(".product_img_link").hover();
+        ph.hoverOnCssElement(".product_img_link");
 
-        String thirdItemName = $(".right-block .product-name").getText();
-        String thirdItemPrice = $("div.content_price:nth-child(4) > span:nth-child(1)").getText();
+//        String thirdItemName = $(".right-block .product-name").getText();
+//        String thirdItemPrice = $("div.content_price:nth-child(4) > span:nth-child(1)").getText();
+        String thirdItemName = ph.getTextFromCssElement(".right-block .product-name");
+        String thirdItemPrice = ph.getTextFromCssElement("div.content_price:nth-child(4) > span:nth-child(1)");
 
         //collect the third item information from the list
         itemList.add(thirdItemName);
         itemList.add(thirdItemPrice);
 
         //add an item to cart and close a cart window
-        $(".ajax_add_to_cart_button").click();
-        $(".cross").click();
+//        $(".ajax_add_to_cart_button").click();
+//        $(".cross").click();
+        ph.clickOnCssElement(".ajax_add_to_cart_button");
+        ph.clickOnCssElement(".cross");
 
         return page(MainPage.class);
 
     }
 
-//        public ArrayList<String> getItemList () {
-//
-//        return itemList;
-//    }
 
     public ArrayList<String> getItemList () {
 
@@ -141,9 +165,11 @@ public class MainPage {
 
     public int checkCartSize() {
 
-        $(".shopping_cart > a:nth-child(1)").hover();
+//        $(".shopping_cart > a:nth-child(1)").hover();
+        ph.hoverOnCssElement(".shopping_cart > a:nth-child(1)");
 
-       int mainCartSize =  $$(".products dt").size();
+//        int mainCartSize =  $$(".products dt").size();
+        int mainCartSize =  ph.getSizeFromCss(".products dt");
 
         return mainCartSize;
 
