@@ -142,7 +142,7 @@ public class MainPage {
         String thirdItemName = ph.getTextFromCssElement(".right-block .product-name");
         String thirdItemPrice = ph.getTextFromCssElement("div.content_price:nth-child(4) > span:nth-child(1)");
 
-        //collect the third item information from the list
+        //Collect the third item information from the list
         itemList.add(thirdItemName);
         itemList.add(thirdItemPrice);
 
