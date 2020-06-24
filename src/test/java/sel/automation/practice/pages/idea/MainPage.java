@@ -13,11 +13,11 @@ import static org.testng.Assert.assertEquals;
 public class MainPage {
 
     private MenuBlock menublock;
-    PageHelper ph = new PageHelper();
+    private PageHelper ph = new PageHelper();
 
-    public  static final ArrayList<String> itemList = new ArrayList<String>();
-    public  static final ArrayList<String> cartList = new ArrayList<String>();
-    public  static final ArrayList<String> cartListTotal = new ArrayList<String>();
+    public  static final ArrayList<String> itemList = new ArrayList<>();
+    public  static final ArrayList<String> cartList = new ArrayList<>();
+    public  static final ArrayList<String> cartListTotal = new ArrayList<>();
 
 
     public static MainPage enterToMainPage() {
@@ -153,7 +153,7 @@ public class MainPage {
         String cartShippingCost = ph.getTextFromCssElement(".cart_block_shipping_cost");
         String cartTotalCost = ph.getTextFromCssElement(".cart_block_total");
 
-        //hover an element
+        //Hover an element
         ph.hoverOnCssElement(".shopping_cart > a:nth-child(1)");
 
         //collect a cart (three items' names and prices) information

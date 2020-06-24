@@ -10,10 +10,10 @@ import static org.testng.Assert.assertEquals;
 
 public class CartPage {
 
-    public  static final ArrayList<String> orderList = new ArrayList<String>();
-    public  static final ArrayList<String> orderTotalCost = new ArrayList<String>();
+    public  static final ArrayList<String> orderList = new ArrayList<>();
+    public  static final ArrayList<String> orderTotalCost = new ArrayList<>();
 
-    PageHelper ph = new PageHelper();
+    private PageHelper ph = new PageHelper();
     MainPage mp = new MainPage();
 
 
@@ -114,9 +114,8 @@ public class CartPage {
     public float totalUserCost() {
 
         String abc = String.valueOf(orderTotalCost.get(1)).replace("$", "");
-        float totalUserCost = Float.parseFloat(abc);
+        return Float.parseFloat(abc);
 
-        return totalUserCost;
     }
 
 
@@ -157,9 +156,8 @@ public class CartPage {
         float priceItemThree_f = Float.parseFloat(priceItemThree);
 
         float abc = shippingCost_f + priceItemOne_f + priceItemTwo_f + priceItemThree_f;
-        float totalSumCounting = Precision.round(abc, 2);
 
-        return totalSumCounting;
+        return Precision.round(abc, 2);
 
     }
 
