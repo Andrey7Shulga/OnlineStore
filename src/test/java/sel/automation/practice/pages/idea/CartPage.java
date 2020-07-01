@@ -142,19 +142,21 @@ public class CartPage {
 
     public float totalSumCounting() {
 
+        float itemPrices = 0;
+
+        for(int i=1; i<6; i=i+2) {
+
+            itemPrices += Float.parseFloat(orderList.get(i).replace("$", ""));
+
+        }
+
         String shippingCost = orderTotalCost.get(0).replace("$", "");
-        String priceItemOne = orderList.get(1).replace("$", "");
-        String priceItemTwo = orderList.get(3).replace("$", "");
-        String priceItemThree = orderList.get(5).replace("$", "");
-
         float shippingCost_f = Float.parseFloat(shippingCost);
-        float priceItemOne_f = Float.parseFloat(priceItemOne);
-        float priceItemTwo_f = Float.parseFloat(priceItemTwo);
-        float priceItemThree_f = Float.parseFloat(priceItemThree);
 
-        float abc = shippingCost_f + priceItemOne_f + priceItemTwo_f + priceItemThree_f;
+        float totalCost = itemPrices + shippingCost_f;
 
-        return Precision.round(abc, 2);
+        return Precision.round(totalCost, 2);
+
 
     }
 
