@@ -147,28 +147,20 @@ public class MainPage {
 
     public MainPage checkCartList() {
 
-        //productCartSize - .products dt
-        //productNameCollection - .products dt a[class*='_name']
-        //productPriceCollection - .products dt span.price
+        String xpathEnd = "//*[@class='products']/dt";
+        String xpathTitle = "//a[@class='cart_block_product_name']";
+        String xpathPrice = "/div/span";
+        String attr = "title";
 
-        // collecting Name and Price information from the cart's items
-        String cartItemOneName = ph.getAttributeFromCssElement("dt.first_item a.cart_block_product_name", "title");
-        String cartItemOnePrice = ph.getTextFromCssElement("dt.first_item span.price");
-        String cartItemTwoName = ph.getAttributeFromCssElement("dt.item a.cart_block_product_name", "title");
-        String cartItemTwoPrice = ph.getTextFromCssElement("dt.item span.price");
-        String cartItemThreeName = ph.getAttributeFromCssElement("dt.last_item a.cart_block_product_name", "title");
-        String cartItemThreePrice = ph.getTextFromCssElement("dt.last_item span.price");
+        //Hover an element
+        ph.hoverOnCssElement(".shopping_cart > a:nth-child(1)");
 
         //collecting cost information
         String cartShippingCost = ph.getTextFromCssElement(".cart_block_shipping_cost");
         String cartTotalCost = ph.getTextFromCssElement(".cart_block_total");
 
-        //Hover an element
-        ph.hoverOnCssElement(".shopping_cart > a:nth-child(1)");
-
         //collect a cart (three items' names and prices) information
-        ph.addSixToArray(cartList, cartItemOneName, cartItemOnePrice, cartItemTwoName,
-                cartItemTwoPrice, cartItemThreeName, cartItemThreePrice);
+        ph.arrayCollectingWithAttribute(cartList, xpathEnd, xpathTitle, xpathPrice, attr);
 
         //collect the cost information from the cart
         ph.addTwoToArray(cartListTotal, cartShippingCost, cartTotalCost);

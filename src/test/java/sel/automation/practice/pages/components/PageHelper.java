@@ -114,4 +114,18 @@ public class PageHelper {
 
     }
 
+    public void arrayCollectingWithAttribute (ArrayList<String> a1, String xpathEndPoint, String titleXpath,
+                                              String priceXpath, String attr) {
+
+        this.arraylist = a1;
+        int size = $$x("" + xpathEndPoint + "" + titleXpath).size();
+
+        for(int i = 1; i <= size; i++){
+            a1.add($x("" + xpathEndPoint + "[" + i + "]" + titleXpath).getAttribute(attr));
+            a1.add($x("" + xpathEndPoint + "[" + i + "]" + priceXpath).getText());
+
+        }
+
+    }
+
 }
