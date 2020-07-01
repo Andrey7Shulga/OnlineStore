@@ -83,15 +83,21 @@ public class MainPage {
 
         menublock.dressesMenuBlock();
 
+        //xPath for the second Item attributes
+        String hoverElement = "//li[contains(@class, 'product')][3]//a[contains(@class, 'img')]";
+        String newPricePath = "/following-sibling::div[2]/span[@itemprop='price']";
+
         //select 'Summer Dresses' category
         ph.clickOnCssElement("#subcategories a[title='Summer Dresses']");
 
         //hover an element to get some attributes
-        ph.hoverOnCssElement("li.ajax_block_product:nth-child(3) .product_img_link");
+        ph.hoverOnXpathElement(hoverElement);
 
-        String secondItemName = ph.getTextFromCssElement("#center_column li:nth-child(3) a.product-name");
+        String secondItemName =
+                ph.getAttributeFromXpathElement(hoverElement, "title");
+
         String secondItemPrice =
-                ph.getTextFromXpathElement("/html/body/div/div[2]/div/div[3]/div[2]/ul/li[3]/div/div[1]/div/div[2]/span[1]");
+                ph.getTextFromXpathElement("" + hoverElement + "" + newPricePath + "");
 
         //collect the second item information from the list
         ph.addTwoToArray(itemList, secondItemName, secondItemPrice);
