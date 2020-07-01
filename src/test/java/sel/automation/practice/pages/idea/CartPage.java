@@ -93,17 +93,14 @@ public class CartPage {
 
     public CartPage ordersInfo() {
 
-        String firstOrderTitle = ph.getTextFromCssElement("#cart_summary tr:nth-child(1) p.product-name");
-        String firstOrderPrice = ph.getTextFromCssElement("#cart_summary tr:nth-child(1) td:nth-child(4) .price");
-        String secondOrderTitle = ph.getTextFromCssElement("#cart_summary tr:nth-child(2) p.product-name");
-        String secondOrderPrice = ph.getTextFromCssElement(".special-price");
-        String thirdOrderTitle = ph.getTextFromCssElement("#cart_summary tr:nth-child(3) p.product-name");
-        String thirdOrderPrice = ph.getTextFromCssElement("#cart_summary tr:nth-child(3) td:nth-child(4) .price");
         String totOrderCost = ph.getTextFromCssElement("#total_price");
 
-        //collect an order (three items' names and prices) information
-        ph.addSixToArray(orderList, firstOrderTitle, firstOrderPrice, secondOrderTitle,
-                secondOrderPrice, thirdOrderTitle, thirdOrderPrice);
+        //xpath for order's titles and prices
+        String xpathEndpoint = "//*[@id='cart_summary']/tbody/tr";
+        String titleXpath = "/td[2]/p/a";
+        String priceXpath = "/td[6]/span";
+
+        ph.arrayCollecting(orderList, xpathEndpoint, titleXpath, priceXpath);
 
         //collect the order's total cost information
         orderTotalCost.add(totOrderCost);

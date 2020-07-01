@@ -147,6 +147,10 @@ public class MainPage {
 
     public MainPage checkCartList() {
 
+        //productCartSize - .products dt
+        //productNameCollection - .products dt a[class*='_name']
+        //productPriceCollection - .products dt span.price
+
         // collecting Name and Price information from the cart's items
         String cartItemOneName = ph.getAttributeFromCssElement("dt.first_item a.cart_block_product_name", "title");
         String cartItemOnePrice = ph.getTextFromCssElement("dt.first_item span.price");

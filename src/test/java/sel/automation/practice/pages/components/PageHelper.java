@@ -101,5 +101,17 @@ public class PageHelper {
 
     }
 
+    public void arrayCollecting (ArrayList<String> a1, String xpathEndPoint, String titleXpath, String priceXpath) {
+
+        this.arraylist = a1;
+        int size = $$x("" + xpathEndPoint + "" + titleXpath).size();
+
+        for(int i = 1; i <= size; i++){
+            a1.add($x("" + xpathEndPoint + "[" + i + "]" + titleXpath).getText());
+            a1.add($x("" + xpathEndPoint + "[" + i + "]" + priceXpath).getText());
+
+        }
+
+    }
 
 }
