@@ -63,7 +63,8 @@ public class MainPage {
         ph.clickOnCssElement("#subcategories a[title='Blouses']");
 
         //hover an element to get some attributes
-        ph.hoverOnCssElement(".product_img_link");
+        ph.hoverOnCssElement("a.product_img_link");
+
 
         String firstItemName = ph.getTextFromCssElement(".right-block .product-name");
         String firstItemPrice = ph.getTextFromCssElement("div.content_price span.price");
@@ -118,7 +119,7 @@ public class MainPage {
         ph.hoverOnCssElement(".product_img_link");
 
         String thirdItemName = ph.getTextFromCssElement(".right-block .product-name");
-        String thirdItemPrice = ph.getTextFromCssElement("div.content_price:nth-child(4) > span:nth-child(1)");
+        String thirdItemPrice = ph.getTextFromCssElement(".product-image-container div span");
 
         //Collect the third item information from the list
         ph.addTwoToArray(itemList, thirdItemName, thirdItemPrice);
