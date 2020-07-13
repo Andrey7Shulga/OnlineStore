@@ -45,7 +45,7 @@ public class Shopping {
 
     @BeforeClass
     public void setup() {
-        //Log4J configuration
+        ///Log4J configuration
         BasicConfigurator.configure();
 
         Configuration.timeout = 10000;
