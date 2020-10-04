@@ -9,16 +9,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
+import sel.automation.practice.listeners.TestListener;
 import sel.automation.practice.listeners.WebDriverListener;
 
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 
+@Listeners(TestListener.class)
 public class BaseTest {
 
     protected WebDriver driver;
 
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void setup() {
         ///Log4J configuration
         BasicConfigurator.configure();
