@@ -9,9 +9,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-//import sel.automation.practice.listeners.TestListener;
-//import sel.automation.practice.listeners.WebDriverListener;
+import sel.automation.practice.listeners.TestListener;
 import sel.automation.practice.listeners.WebDriverListener;
 import sel.automation.practice.pages.CartPage;
 import sel.automation.practice.pages.MainPage;
@@ -22,8 +22,7 @@ import static sel.automation.practice.pages.CartPage.enterToCartPage;
 import static sel.automation.practice.pages.CartPage.orderTotalCost;
 import static sel.automation.practice.pages.MainPage.enterToMainPage;
 
-//@Listeners(TestListener.class)
-
+@Listeners(TestListener.class)
 public class Shopping {
 
     private WebDriver driver;
@@ -97,7 +96,6 @@ public class Shopping {
                 assertEquals(cartPage.totalNumberOfOrders(), itemNumbers);
         enterToCartPage()
                 .checkCartAndOrderLists()
-//                .checkTotalLists()
                 .payByBankWireClick();
                 assertEquals(cartPage.totalSumCounting(), cartPage.totalUserCost());
                 assertEquals(cartPage.orderSummaryText(), confirmationPageTextOne);

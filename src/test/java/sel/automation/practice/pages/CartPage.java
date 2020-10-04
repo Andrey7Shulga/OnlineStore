@@ -137,12 +137,6 @@ public class CartPage {
         return page(CartPage.class);
     }
 
-    public CartPage checkTotalLists() {
-
-        assertEquals(mp.getCartListTotal(), getOrdertotalCost());
-        return page(CartPage.class);
-    }
-
 
     public float totalSumCounting() {
 

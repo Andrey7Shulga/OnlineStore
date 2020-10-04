@@ -22,16 +22,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd23d513-b8a4-498d-b85e-0e5bc1826e5e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sel/automation/practice/listeners/WebDriverListener.java" afterDir="false" />
+    <list default="true" id="fd23d513-b8a4-498d-b85e-0e5bc1826e5e" name="Default Changelist" comment="adding new element (tax) to be counted">
+      <change afterPath="$PROJECT_DIR$/src/test/java/sel/automation/practice/listeners/TestListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sel/automation/practice/pages/components/MenuBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sel/automation/practice/components/MenuBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sel/automation/practice/pages/components/PageHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sel/automation/practice/components/PageHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sel/automation/practice/pages/idea/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sel/automation/practice/pages/CartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sel/automation/practice/pages/idea/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sel/automation/practice/pages/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sel/automation/practice/pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sel/automation/practice/pages/CartPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sel/automation/practice/tests/Shopping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sel/automation/practice/tests/Shopping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/sel/automation/practice/pages/CartPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/sel/automation/practice/pages/CartPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/sel/automation/practice/tests/Shopping.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/sel/automation/practice/tests/Shopping.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +106,14 @@
       <option name="presentableId" value="Default" />
       <updated>1601798630366</updated>
     </task>
+    <task id="LOCAL-00001" summary="adding new element (tax) to be counted">
+      <created>1601807585369</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1601807585369</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -121,15 +127,19 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="adding new element (tax) to be counted" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding new element (tax) to be counted" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1601803696237">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601803696237" />
-    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1601801829709">
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1601809156210">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1601801829709" />
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1601809156210" />
     <state x="691" y="299" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1601801715907">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -142,22 +152,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="756" y="426" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1040@0.0.1920.1040" timestamp="1601801717194" />
-    <state width="1877" height="311" key="GridCell.Tab.0.bottom" timestamp="1601807435959">
+    <state width="1877" height="371" key="GridCell.Tab.0.bottom" timestamp="1601808025998">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="311" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601807435959" />
-    <state width="1877" height="311" key="GridCell.Tab.0.center" timestamp="1601807435959">
+    <state width="1877" height="371" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601808025998" />
+    <state width="1877" height="371" key="GridCell.Tab.0.center" timestamp="1601808025998">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="311" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601807435959" />
-    <state width="1877" height="311" key="GridCell.Tab.0.left" timestamp="1601807435959">
+    <state width="1877" height="371" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601808025998" />
+    <state width="1877" height="371" key="GridCell.Tab.0.left" timestamp="1601808025998">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="311" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601807435959" />
-    <state width="1877" height="311" key="GridCell.Tab.0.right" timestamp="1601807435959">
+    <state width="1877" height="371" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601808025998" />
+    <state width="1877" height="371" key="GridCell.Tab.0.right" timestamp="1601808025998">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="311" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601807435959" />
+    <state width="1877" height="371" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601808025998" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1601799605044">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
