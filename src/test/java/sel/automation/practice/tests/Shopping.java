@@ -23,9 +23,7 @@ import static sel.automation.practice.pages.CartPage.orderTotalCost;
 import static sel.automation.practice.pages.MainPage.enterToMainPage;
 
 @Listeners(TestListener.class)
-public class Shopping {
-
-    private WebDriver driver;
+public class Shopping extends BaseTest{
 
     MainPage mainPage = new MainPage();
     CartPage cartPage = new CartPage();
@@ -40,34 +38,11 @@ public class Shopping {
     private int itemNumbers = 3;
 
 
-
-    @BeforeClass
-    public void setup() {
-        ///Log4J configuration
-        BasicConfigurator.configure();
-
-        Configuration.timeout = 10000;
-        Configuration.collectionsTimeout = 10000;
-
-        //WebDriver setup
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-
-        WebDriverRunner.setWebDriver(driver);
-        driver.manage().window().maximize();
-
-        //WebListener setup
-        EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver);
-        eventFiringWebDriver.register(new WebDriverListener());
-        driver = eventFiringWebDriver;
+    @Test
+    public void chain() {
 
         driver.get(url);
 
-    }
-
-
-    @Test
-    public void chain() {
         enterToMainPage()
                 .logIn(myLogIn, myPassword)
                 .isLoginCorrect(userName)
@@ -109,17 +84,6 @@ public class Shopping {
         enterToMainPage()
                 .logOut()
                 .isLogOutCorrect();
-
-    }
-
-
-    @AfterClass
-    public void quitForever() {
-
-        if (driver != null) {
-            clearBrowserCookies();
-            driver.quit();
-        }
 
     }
 
