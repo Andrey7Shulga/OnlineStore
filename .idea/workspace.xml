@@ -22,10 +22,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd23d513-b8a4-498d-b85e-0e5bc1826e5e" name="Default Changelist" comment="BaseTest added">
+    <list default="true" id="fd23d513-b8a4-498d-b85e-0e5bc1826e5e" name="Default Changelist" comment="some cleaning">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sel/automation/practice/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sel/automation/practice/tests/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sel/automation/practice/tests/Shopping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sel/automation/practice/tests/Shopping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/testng.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/sel/automation/practice/tests/Shopping.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/sel/automation/practice/tests/Shopping.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601810419437</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="some cleaning">
+      <created>1601811046194</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1601811046194</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,7 +150,8 @@
     <MESSAGE value="adding new element (tax) to be counted" />
     <MESSAGE value="TestListener" />
     <MESSAGE value="BaseTest added" />
-    <option name="LAST_COMMIT_MESSAGE" value="BaseTest added" />
+    <MESSAGE value="some cleaning" />
+    <option name="LAST_COMMIT_MESSAGE" value="some cleaning" />
   </component>
   <component name="WindowStateProjectService">
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1601803696237">
@@ -164,29 +174,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="756" y="426" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1040@0.0.1920.1040" timestamp="1601801717194" />
-    <state width="1877" height="371" key="GridCell.Tab.0.bottom" timestamp="1601810278652">
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1601811773792">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="371" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601810278652" />
-    <state width="1877" height="371" key="GridCell.Tab.0.center" timestamp="1601810278652">
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601811773792" />
+    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1601811773792">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="371" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601810278652" />
-    <state width="1877" height="371" key="GridCell.Tab.0.left" timestamp="1601810278652">
+    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601811773792" />
+    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1601811773792">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="371" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601810278652" />
-    <state width="1877" height="371" key="GridCell.Tab.0.right" timestamp="1601810278652">
+    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601811773792" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1601811773792">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="371" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601810278652" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1601799605044">
+    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601811773792" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1601811756964">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601799605044" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1601809668505">
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601811756964" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1601811152653">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601809668505" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601811152653" />
   </component>
 </project>
