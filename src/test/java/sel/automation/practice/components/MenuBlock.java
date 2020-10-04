@@ -1,7 +1,5 @@
-package sel.automation.practice.pages.components;
+package sel.automation.practice.components;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.ElementsContainer;
 import org.openqa.selenium.By;
 

@@ -1,7 +1,6 @@
 package sel.automation.practice.tests;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.BasicConfigurator;
@@ -10,20 +9,20 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import sel.automation.practice.listeners.TestListener;
+//import sel.automation.practice.listeners.TestListener;
+//import sel.automation.practice.listeners.WebDriverListener;
 import sel.automation.practice.listeners.WebDriverListener;
-import sel.automation.practice.pages.idea.CartPage;
-import sel.automation.practice.pages.idea.MainPage;
+import sel.automation.practice.pages.CartPage;
+import sel.automation.practice.pages.MainPage;
 
 import static com.codeborne.selenide.Selenide.*;
 import static org.testng.AssertJUnit.assertEquals;
-import static sel.automation.practice.pages.idea.CartPage.enterToCartPage;
-import static sel.automation.practice.pages.idea.CartPage.orderTotalCost;
-import static sel.automation.practice.pages.idea.MainPage.enterToMainPage;
+import static sel.automation.practice.pages.CartPage.enterToCartPage;
+import static sel.automation.practice.pages.CartPage.orderTotalCost;
+import static sel.automation.practice.pages.MainPage.enterToMainPage;
 
-@Listeners(TestListener.class)
+//@Listeners(TestListener.class)
 
 public class Shopping {
 
@@ -98,16 +97,16 @@ public class Shopping {
                 assertEquals(cartPage.totalNumberOfOrders(), itemNumbers);
         enterToCartPage()
                 .checkCartAndOrderLists()
-                .checkTotalLists()
+//                .checkTotalLists()
                 .payByBankWireClick();
                 assertEquals(cartPage.totalSumCounting(), cartPage.totalUserCost());
                 assertEquals(cartPage.orderSummaryText(), confirmationPageTextOne);
-                assertEquals(cartPage.bankWirePaymentConfirmation(), orderTotalCost.get(1));
+                assertEquals(cartPage.bankWirePaymentConfirmation(), orderTotalCost.get(2));
 
         enterToCartPage()
                 .confirmMyOrder();
                 assertEquals(cartPage.orderConfirmationSubPage(), confirmationPageTextTwo);
-                assertEquals(cartPage.finalAmountConfirmation(), orderTotalCost.get(1));
+                assertEquals(cartPage.finalAmountConfirmation(), orderTotalCost.get(2));
 
         enterToMainPage()
                 .logOut()

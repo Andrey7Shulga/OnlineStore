@@ -1,7 +1,7 @@
-package sel.automation.practice.pages.idea;
+package sel.automation.practice.pages;
 
 import org.apache.commons.math3.util.Precision;
-import sel.automation.practice.pages.components.PageHelper;
+import sel.automation.practice.components.PageHelper;
 
 import java.util.ArrayList;
 
@@ -94,6 +94,7 @@ public class CartPage {
     public CartPage ordersInfo() {
 
         String totOrderCost = ph.getTextFromCssElement("#total_price");
+        String taxCost = ph.getTextFromCssElement("#total_tax");
 
         //xpath for order's titles and prices
         String xpathEndpoint = "//*[@id='cart_summary']/tbody/tr";
@@ -101,6 +102,9 @@ public class CartPage {
         String priceXpath = "/td[6]/span";
 
         ph.arrayCollecting(orderList, xpathEndpoint, titleXpath, priceXpath);
+
+        //collect the order's tax cost information
+        orderTotalCost.add(taxCost);
 
         //collect the order's total cost information
         orderTotalCost.add(totOrderCost);
@@ -110,7 +114,7 @@ public class CartPage {
 
     public float totalUserCost() {
 
-        String abc = String.valueOf(orderTotalCost.get(1)).replace("$", "");
+        String abc = String.valueOf(orderTotalCost.get(2)).replace("$", "");
         return Float.parseFloat(abc);
 
     }
@@ -122,7 +126,7 @@ public class CartPage {
         return orderList;
     }
 
-    public ArrayList<String> getOrdertotalCost() {
+    public ArrayList<String>    getOrdertotalCost() {
 
         return orderTotalCost;
     }
@@ -153,7 +157,10 @@ public class CartPage {
         String shippingCost = orderTotalCost.get(0).replace("$", "");
         float shippingCost_f = Float.parseFloat(shippingCost);
 
-        float totalCost = itemPrices + shippingCost_f;
+        String taxCost = orderTotalCost.get(1).replace("$", "");
+        float taxCost_f = Float.parseFloat(taxCost);
+
+        float totalCost = itemPrices + shippingCost_f + taxCost_f;
 
         return Precision.round(totalCost, 2);
 

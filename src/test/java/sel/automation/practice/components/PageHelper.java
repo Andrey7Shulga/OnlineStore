@@ -1,4 +1,4 @@
-package sel.automation.practice.pages.components;
+package sel.automation.practice.components;
 
 import java.util.ArrayList;
 

@@ -1,9 +1,9 @@
-package sel.automation.practice.pages.idea;
+package sel.automation.practice.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import sel.automation.practice.pages.components.MenuBlock;
-import sel.automation.practice.pages.components.PageHelper;
+import sel.automation.practice.components.MenuBlock;
+import sel.automation.practice.components.PageHelper;
 
 import java.util.ArrayList;
 
